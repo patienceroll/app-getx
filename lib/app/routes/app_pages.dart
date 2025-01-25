@@ -14,14 +14,14 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      name: _Paths.WORKBENCH,
-      page: () => const WorkbenchView(),
-      binding: WorkbenchBinding(),
-    ),
+        name: _Paths.WORKBENCH,
+        page: () => const WorkbenchView(),
+        binding: WorkbenchBinding(),
+        transition: Transition.fadeIn),
     GetPage(
-      name: _Paths.PROFILE,
-      page: () => const ProfileView(),
-      binding: ProfileBinding(),
-    ),
+        name: _Paths.PROFILE,
+        page: () => const ProfileView(),
+        binding: ProfileBinding(),
+        transition: Transition.fadeIn),
   ];
 }

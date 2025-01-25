@@ -1,3 +1,4 @@
+import 'package:app/app/navigation/bottom_navigation_controler.dart';
 import 'package:app/app/theme/app_theme.dart';
 import 'package:app/generated/locales.g.dart';
 
@@ -17,6 +18,7 @@ void main() {
       theme: AppTheme.defaultTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
+      initialBinding: InitialBinding(),
     ),
   );
 }
@@ -24,4 +26,11 @@ void main() {
 class AppTranslations extends Translations {
   @override
   Map<String, Map<String, String>> get keys => AppTranslation.translations;
+}
+
+class InitialBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(BottomNavigationControler());
+  }
 }

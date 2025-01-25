@@ -1,3 +1,4 @@
+import 'package:app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -10,15 +11,21 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ProfileView'),
-        centerTitle: true,
+        toolbarHeight: 0,
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'ProfileView is working',
+          LocaleKeys.profile.tr,
           style: TextStyle(fontSize: 20),
         ),
       ),
+      bottomNavigationBar: Obx(() => BottomNavigationBar(
+            items: controller.bottomNavController.items,
+            currentIndex: controller.bottomNavController.currentIndex.value,
+            onTap: (int int) {
+              controller.bottomNavController.changePage(int);
+            },
+          )),
     );
   }
 }

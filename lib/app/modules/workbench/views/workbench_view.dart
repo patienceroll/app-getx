@@ -7,12 +7,12 @@ import '../controllers/workbench_controller.dart';
 
 class WorkbenchView extends GetView<WorkbenchController> {
   const WorkbenchView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(LocaleKeys.workbench.tr),
-        centerTitle: true,
+        toolbarHeight: 0,
       ),
       body: Center(
         child: Text(
@@ -20,6 +20,13 @@ class WorkbenchView extends GetView<WorkbenchController> {
           style: TextStyle(fontSize: 20),
         ),
       ),
+      bottomNavigationBar: Obx(() => BottomNavigationBar(
+            items: controller.bottomNavController.items,
+            currentIndex: controller.bottomNavController.currentIndex.value,
+            onTap: (int int) {
+              controller.bottomNavController.changePage(int);
+            },
+          )),
     );
   }
 }

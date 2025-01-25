@@ -1,7 +1,9 @@
+import 'package:app/app/navigation/bottom_navigation_controler.dart';
 import 'package:get/get.dart';
 
 class WorkbenchController extends GetxController {
-  //TODO: Implement WorkbenchController
+  final BottomNavigationControler bottomNavController =
+      Get.find<BottomNavigationControler>();
 
   final count = 0.obs;
   @override
