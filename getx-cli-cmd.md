@@ -1,213 +1,186 @@
-````markdown
-# README.md
 
-## Installation
 
-### Activate `get_cli` globally:
+```markdown
+# Get CLI 使用指南
 
+## 安装
+
+### 全局激活 `get_cli`：
 ```bash
 pub global activate get_cli
 ```
-````
-
-- To use this, add the following to your system PATH:
+- 使用本命令需要设置系统环境变量：
   ```
-  [FlutterSDKInstallDir]\bin\cache\dart-sdk\bin
+  [FlutterSDK安装目录]\bin\cache\dart-sdk\bin
+  ```
+  和
+  ```
+  [FlutterSDK安装目录]\.pub-cache\bin
   ```
 
-### Activate `get_cli` in your Flutter project:
-
+### 在 Flutter 项目中激活 `get_cli`：
 ```bash
 flutter pub global activate get_cli
 ```
 
 ---
 
-## Project Creation
+## 项目创建
 
-### Create a Flutter project in the current directory:
-
+### 在当前目录创建一个 Flutter 项目：
 ```bash
 get create project
 ```
-
-- By default, it will take the folder's name as the project name.
-- You can name the project explicitly:
+- 默认使用文件夹名称作为项目名称。
+- 你可以使用以下命令给项目命名：
   ```bash
   get create project:my_project
   ```
-- If the name has spaces, use:
+- 如果项目名称有空格，使用：
   ```bash
   get create project:"my cool project"
   ```
 
-### Generate the chosen structure on an existing project:
-
+### 在现有项目中生成所选结构：
 ```bash
 get init
 ```
 
 ---
 
-## Page and Screen Creation
+## 页面和屏幕创建
 
-### Create a page:
-
+### 创建页面：
 ```bash
 get create page:home
 ```
+- 页面包括 `controller`、`view` 和 `binding`。
+- 你可以随便命名，例如：
+  ```bash
+  get create page:login
+  ```
+- 注：选择了 `Getx_pattern` 结构才用这个选项。
 
-- Pages include a controller, view, and binding.
-- You can use any name, e.g., `get create page:login`.
-- Use this option if the chosen structure is `Getx_pattern`.
-
-### Create a screen:
-
+### 创建屏幕：
 ```bash
 get create screen:home
 ```
-
-- Screens include a controller, view, and binding.
-- You can use any name, e.g., `get screen page:login`.
-- Use this option if the chosen structure is `CLEAN` (by Arktekko).
+- 屏幕包括 `controller`、`view` 和 `binding`。
+- 你可以随便命名，例如：
+  ```bash
+  get create screen:login
+  ```
+- 注：选择了 `CLEAN` 结构才用这个选项（by Arktekko）。
 
 ---
 
-## Controller, View, and Provider Creation
+## 控制器、视图和提供者创建
 
-### Create a new controller in a specific folder:
-
+### 在指定文件夹创建新控制器：
 ```bash
 get create controller:dialogcontroller on home
 ```
+- 你无需引用文件夹，GetX 会自动搜索 `home` 目录，并把你的控制器放在那儿。
 
-- You don’t need to reference the folder explicitly. GetX will automatically search for the `home` folder and add your controller there.
-
-### Create a new view in a specific folder:
-
+### 在指定文件夹创建新视图：
 ```bash
 get create view:dialogview on home
 ```
+- 你无需引用文件夹，GetX 会自动搜索 `home` 目录，并把你的视图放在那儿。
 
-- You don’t need to reference the folder explicitly. GetX will automatically search for the `home` folder and insert your view there.
-
-### Create a new provider in a specific folder:
-
+### 在指定文件夹创建新提供者：
 ```bash
 get create provider:user on home
 ```
 
 ---
 
-## Localization and Model Generation
+## 国际化与模型生成
 
-### Generate a localization file:
-
+### 生成国际化文件：
 ```bash
 get generate locales assets/locales
 ```
+- 注：`assets/locales` 目录下的翻译文件应该是 JSON 格式的。
 
-- Ensure the `assets/locales` directory contains your translation files in JSON format.
-
-### Generate a class model:
-
+### 生成模型类：
 ```bash
 get generate model on home with assets/models/user.json
 ```
+- 注：`assets/models/` 目录下的模板文件应该是 JSON 格式的。
+- 注：`on` 参数指定输出文件夹。GetX 会自动搜索 `home` 目录，并把你的模型放在那儿。
 
-- The `assets/models/user.json` is the path to your template file in JSON format.
-- The `on` parameter specifies the output folder. GetX will automatically search for the `home` folder and insert your class model there.
-
-### Generate the model without the provider:
-
+### 生成无提供者的模型：
 ```bash
 get generate model on home with assets/models/user.json --skipProvider
 ```
 
-### Generate a model from a URL:
-
+### 从 URL 生成模型：
 ```bash
 get generate model on home from "https://api.github.com/users/CpdnCristiano"
 ```
-
-- The URL must return data in JSON format.
+- 注：URL 必须返回 JSON 格式的数据。
 
 ---
 
-## Package Management
+## 依赖管理
 
-### Install a package in your project (dependencies):
-
+### 为你的项目安装依赖：
 ```bash
 get install camera
 ```
 
-### Install several packages in your project:
-
+### 为你的项目安装多个依赖：
 ```bash
 get install http path camera
 ```
 
-### Install a package with a specific version:
-
+### 为你的项目安装指定版本的依赖：
 ```bash
 get install path:1.6.4
 ```
+- 你可以为多个依赖指定版本号。
 
-- You can also specify multiple packages with version numbers.
-
-### Install a dev package in your project (dev_dependencies):
-
+### 为你的项目安装开发依赖（`dev_dependencies`）：
 ```bash
 get install flutter_launcher_icons --dev
 ```
 
-### Remove a package from your project:
-
+### 为你的项目移除一个依赖：
 ```bash
 get remove http
 ```
 
-### Remove several packages from your project:
-
+### 为你的项目移除多个依赖：
 ```bash
 get remove http path
 ```
 
 ---
 
-## CLI Management
+## CLI 管理
 
-### Update the CLI:
-
+### 更新 CLI：
 ```bash
 get update
 ```
-
-- Alternatively:
+- 或：
   ```bash
   get upgrade
   ```
 
-### Show the current CLI version:
-
+### 显示当前 CLI 版本：
 ```bash
 get -v
 ```
-
-- Alternatively:
+- 或：
   ```bash
   get -version
   ```
 
-### Get help:
-
+### 获取帮助：
 ```bash
 get help
 ```
-
 ```
 
----
-
-```
