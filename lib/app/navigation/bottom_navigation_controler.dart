@@ -11,12 +11,10 @@ class BottomNavigationControler extends GetxController {
         icon: Icon(Icons.person), label: LocaleKeys.profile.tr)
   ];
 
-
-
   var currentIndex = 0.obs; // 使用 RxInt 管理当前索引
 
   void changePage(int index) {
     currentIndex.value = index; // 更新索引
-    Get.toNamed([Routes.WORKBENCH,Routes.PROFILE][index]);
+    Get.offNamed([Routes.WORKBENCH, Routes.PROFILE][index]);
   }
 }

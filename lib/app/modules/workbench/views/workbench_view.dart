@@ -26,6 +26,9 @@ class WorkbenchView extends GetView<WorkbenchController> {
             onTap: (int int) {
               controller.bottomNavController.changePage(int);
             },
+            selectedItemColor: Get.theme.primaryColor,
+            unselectedItemColor: Get.theme.unselectedWidgetColor,
+            backgroundColor: Get.theme.scaffoldBackgroundColor,
           )),
     );
   }

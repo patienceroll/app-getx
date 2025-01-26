@@ -25,6 +25,9 @@ class ProfileView extends GetView<ProfileController> {
             onTap: (int int) {
               controller.bottomNavController.changePage(int);
             },
+            selectedItemColor: Get.theme.primaryColor,
+            unselectedItemColor: Get.theme.unselectedWidgetColor,
+            backgroundColor: Get.theme.scaffoldBackgroundColor,
           )),
     );
   }

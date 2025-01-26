@@ -19,6 +19,8 @@ void main() {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       initialBinding: InitialBinding(),
+      navigatorKey: Get.key, // 使用全局 NavigatorKey
+      navigatorObservers: [GetObserver()], // 添加 GetX 的导航观察器
     ),
   );
 }
