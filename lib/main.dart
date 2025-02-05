@@ -1,4 +1,3 @@
-import 'package:app/app/navigation/bottom_navigation_controler.dart';
 import 'package:app/app/theme/app_theme.dart';
 import 'package:app/generated/locales.g.dart';
 
@@ -19,8 +18,6 @@ void main() {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       initialBinding: InitialBinding(),
-      navigatorKey: Get.key, // 使用全局 NavigatorKey
-      navigatorObservers: [GetObserver()], // 添加 GetX 的导航观察器
     ),
   );
 }
@@ -32,7 +29,5 @@ class AppTranslations extends Translations {
 
 class InitialBinding extends Bindings {
   @override
-  void dependencies() {
-    Get.put(BottomNavigationControler());
-  }
+  void dependencies() {}
 }
