@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 
-class WorkbenchController extends GetxController {
+class LoginController extends GetxController {
+  //TODO: Implement LoginController
+
+  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -16,5 +19,5 @@ class WorkbenchController extends GetxController {
     super.onClose();
   }
 
-  final text = RxString('你好');
+  void increment() => count.value++;
 }

@@ -12,11 +12,13 @@ class LocaleKeys {
   LocaleKeys._();
   static const workbench = 'workbench';
   static const profile = 'profile';
+  static const login = 'login';
 }
 
 class Locales {
   static const zh_CN = {
     'workbench': '工作台',
     'profile': '我的',
+    'login': '登录',
   };
 }
