@@ -1,8 +1,10 @@
+import 'package:app/app/global_controler/user_controler.dart';
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
+
 import 'package:app/app/global_controler/theme_controler.dart';
 import 'package:app/generated/locales.g.dart';
-
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
 
@@ -30,5 +32,7 @@ class AppTranslations extends Translations {
 
 class InitialBinding extends Bindings {
   @override
-  void dependencies() {}
+  void dependencies() {
+    Get.put(UserControler());
+  }
 }

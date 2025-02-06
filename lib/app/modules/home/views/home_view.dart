@@ -1,9 +1,10 @@
-import 'package:app/app/modules/home/views/profile/profile.dart';
-import 'package:app/app/modules/home/views/workbench/workbench.dart';
-import 'package:app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+
+import 'package:app/app/modules/home/views/profile/profile.dart';
+import 'package:app/app/modules/home/views/workbench/workbench.dart';
+import 'package:app/generated/locales.g.dart';
 
 import '../controllers/home_controller.dart';
 

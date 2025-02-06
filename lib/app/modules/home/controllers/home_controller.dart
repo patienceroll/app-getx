@@ -1,6 +1,8 @@
-import 'package:app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
+
+import 'package:app/generated/locales.g.dart';
 
 class HomeController extends GetxController {
   List<BottomNavigationBarItem> items = [

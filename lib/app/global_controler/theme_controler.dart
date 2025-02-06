@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
+
 import 'package:app/app/theme/dark_theme.dart';
 import 'package:app/app/theme/default_theme.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ThemeController extends GetxController {
   var primaryColor = Color(0xFF10893E).obs;
