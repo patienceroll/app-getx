@@ -1,3 +1,4 @@
+import 'package:app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -10,12 +11,11 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LoginView'),
-        centerTitle: true,
+        toolbarHeight: 0,
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'LoginView is working',
+          LocaleKeys.login.tr,
           style: TextStyle(fontSize: 20),
         ),
       ),

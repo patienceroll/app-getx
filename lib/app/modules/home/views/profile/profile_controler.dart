@@ -1,11 +1,10 @@
-
 import 'package:get/get.dart';
 
 class ProfileControler extends GetxController {
   @override
   void onInit() {
     super.onInit();
-     Get.log("onInit");
+    Get.log("onInit");
   }
 
   @override

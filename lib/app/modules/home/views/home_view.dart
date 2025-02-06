@@ -16,9 +16,9 @@ class HomeView extends GetView<HomeController> {
         toolbarHeight: 0,
       ),
       body: Obx(() => IndexedStack(
-        index: controller.currentIndex.value,
-        children: [WorkbenchView(), ProfileView()],
-      )),
+            index: controller.currentIndex.value,
+            children: [WorkbenchView(), ProfileView()],
+          )),
       bottomNavigationBar: Obx(() => BottomNavigationBar(
             items: [
               BottomNavigationBarItem(
@@ -28,9 +28,6 @@ class HomeView extends GetView<HomeController> {
             ],
             currentIndex: controller.currentIndex.value,
             onTap: controller.switchTab,
-            selectedItemColor: Get.theme.primaryColor,
-            unselectedItemColor: Get.theme.unselectedWidgetColor,
-            backgroundColor: Get.theme.scaffoldBackgroundColor,
           )),
     );
   }

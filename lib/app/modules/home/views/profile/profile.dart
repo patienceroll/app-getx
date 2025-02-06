@@ -1,4 +1,5 @@
 import 'package:app/app/modules/home/views/profile/profile_controler.dart';
+import 'package:app/app/routes/app_pages.dart';
 import 'package:app/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,12 @@ class ProfileView extends GetView<ProfileControler> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(LocaleKeys.profile.tr + controller.count.value.toString()),
-              IconButton(onPressed: controller.add, icon: Icon(Icons.add))
+              IconButton(onPressed: controller.add, icon: Icon(Icons.add)),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.LOGIN);
+                  },
+                  child: Text(LocaleKeys.login))
             ],
           ),
         ));
