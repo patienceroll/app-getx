@@ -5,10 +5,12 @@ import 'package:get/get.dart';
 
 import 'package:app/app/global_controler/theme_controler.dart';
 import 'package:app/generated/locales.g.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'app/routes/app_pages.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
   Get.put(ThemeController());
 
   final theme = Get.find<ThemeController>();
