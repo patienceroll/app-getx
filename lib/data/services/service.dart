@@ -23,7 +23,7 @@ class CommonResponse<T> {
       _$CommonResponseToJson<T>(this, toJsonT);
 }
 
-class Service extends GetConnect {
+class Connecter extends GetConnect {
   @override
   void onInit() {
     // 设置基础 URL
@@ -47,9 +47,22 @@ class Service extends GetConnect {
       }
     });
   }
+}
 
-  // @override
-  // Future<CommonResponse<T>> get<T>(String url, {Map<String, dynamic>? query}) {
-  //   return super.get<CommonResponse<T>>(url, query: query);
-  // }
+class Service {
+  final connecter = Connecter();
+
+  Future<CommonResponse<T>> get<T>(String url,
+      {Map<String, dynamic>? query,
+      required T Function(Object? json) fromJsonT}) {
+    return connecter
+        .get<CommonResponse<T>>(
+      url,
+      query: query,
+      decoder: (data) => CommonResponse<T>.fromJson(data, fromJsonT),
+    )
+        .then((value) {
+      return value.body!;
+    });
+  }
 }
