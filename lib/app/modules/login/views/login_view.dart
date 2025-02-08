@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:app/generated/locales.g.dart';
-import 'package:get_storage/get_storage.dart';
 
 import '../controllers/login_controller.dart';
 
@@ -31,11 +30,11 @@ class LoginView extends GetView<LoginController> {
                       age: 100,
                       isActive: true);
                   controller.userControler.setUser(user);
-                  controller.storage.write("user", user.toJson()).then((_) {
-                    Get.offAllNamed(Routes.HOME);
-                  });
+                  Get.offAndToNamed(Routes.HOME);
                 },
-                child: Text(LocaleKeys.login.tr))
+                child: Text(LocaleKeys.login.tr)),
+            Obx(() => Text(
+                '登录状态:${controller.userControler.user.value is User ? controller.userControler.user.value!.name : "未登录"}'))
           ],
         ),
       ),
