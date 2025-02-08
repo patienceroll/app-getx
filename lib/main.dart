@@ -1,4 +1,5 @@
 import 'package:app/app/global_controler/user_controler.dart';
+import 'package:app/data/model/user/user.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -12,11 +13,13 @@ import 'app/routes/app_pages.dart';
 void main() async {
   await GetStorage.init();
   Get.put(ThemeController());
+  Get.put(UserControler());
 
   final theme = Get.find<ThemeController>();
+  final user = Get.find<UserControler>();
 
   runApp(GetMaterialApp(
-    initialRoute: AppPages.INITIAL,
+    initialRoute: user.user.value is User ? Routes.HOME : Routes.LOGIN,
     getPages: AppPages.routes,
     translations: AppTranslations(),
     locale: Get.deviceLocale,
@@ -34,7 +37,5 @@ class AppTranslations extends Translations {
 
 class InitialBinding extends Bindings {
   @override
-  void dependencies() {
-    Get.put(UserControler());
-  }
+  void dependencies() {}
 }

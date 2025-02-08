@@ -13,6 +13,7 @@ class LocaleKeys {
   static const workbench = 'workbench';
   static const profile = 'profile';
   static const login = 'login';
+  static const logout = 'logout';
 }
 
 class Locales {
@@ -20,5 +21,6 @@ class Locales {
     'workbench': '工作台',
     'profile': '我的',
     'login': '登录',
+    'logout': '退出登录',
   };
 }

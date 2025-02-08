@@ -1,5 +1,5 @@
 import 'package:app/app/routes/app_pages.dart';
-import 'package:app/data/model/user.dart';
+import 'package:app/data/model/user/user.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -34,7 +34,12 @@ class LoginView extends GetView<LoginController> {
                 },
                 child: Text(LocaleKeys.login.tr)),
             Obx(() => Text(
-                '登录状态:${controller.userControler.user.value is User ? controller.userControler.user.value!.name : "未登录"}'))
+                '登录状态:${controller.userControler.user.value is User ? controller.userControler.user.value!.name : "未登录"}')),
+            ElevatedButton(
+                onPressed: () {
+                  controller.userControler.clearUser();
+                },
+                child: Text(LocaleKeys.logout.tr)),
           ],
         ),
       ),

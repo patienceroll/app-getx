@@ -1,4 +1,4 @@
-import 'package:app/data/model/user.dart';
+import 'package:app/data/model/user/user.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -9,6 +9,11 @@ class UserControler extends GetxController {
   void setUser(User u) {
     user.value = u;
     storage.write("user", u.toJson());
+  }
+
+  void clearUser() {
+    user.value = null;
+    storage.remove("user");
   }
 
   @override
